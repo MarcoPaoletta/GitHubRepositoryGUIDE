@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/Jomhuria-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Montserrat-BoldItalic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/menu/Menu.gd" type="Script" id=3]
+[ext_resource path="res://src/ui/Ui.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.957031, 0.190659, 0.190659, 1, 0.675781, 0.487739, 0.163666, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 780
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+extra_spacing_char = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 170
+outline_size = 4
+extra_spacing_char = 10
+font_data = ExtResource( 1 )
+
+[node name="Menu" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 2 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Create" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -156.5
+margin_top = -88.5
+margin_right = 156.5
+margin_bottom = -7.5
+custom_fonts/font = SubResource( 3 )
+text = "CREATE"
+
+[node name="Update" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -163.0
+margin_top = 7.5
+margin_right = 163.0
+margin_bottom = 88.5
+custom_fonts/font = SubResource( 3 )
+text = "UPDATE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -136.0
+margin_top = 24.0
+margin_right = 136.0
+margin_bottom = 195.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ui" parent="." instance=ExtResource( 4 )]
+
+[node name="Reload" parent="Ui" index="7"]
+visible = false
+
+[node name="Press" parent="Ui" index="8"]
+visible = false
+
+[connection signal="pressed" from="Create" to="." method="_on_Create_pressed"]
+[connection signal="pressed" from="Update" to="." method="_on_Update_pressed"]
+
+[editable path="Ui"]

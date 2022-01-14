@@ -1,0 +1,135 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/Jomhuria-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Montserrat-BoldItalic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/create/Create.gd" type="Script" id=3]
+[ext_resource path="res://src/ui/Ui.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[node name="Create" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.211765, 0.0588235, 0.0588235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -373.0
+margin_top = 16.0
+margin_right = 259.0
+margin_bottom = 391.0
+custom_fonts/font = SubResource( 1 )
+text = "1) git init = initialize git
+2) git remote add origin <link> = add files to the repo
+3) git status = returns the status of our files
+4) git add <file> = add the file to the repo
+5) git add * = add ALL the files to the repo
+6) git commit -m <\"commit\"> = commit name
+7) git push origin master = export the files to GH repo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="init" type="Button" parent="."]
+margin_left = 325.5
+margin_top = 26.25
+margin_right = 380.5
+margin_bottom = 53.25
+custom_fonts/font = SubResource( 3 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="remote_add" type="Button" parent="."]
+margin_left = 696.0
+margin_top = 80.0
+margin_right = 751.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 3 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="status" type="Button" parent="."]
+margin_left = 568.0
+margin_top = 136.0
+margin_right = 623.0
+margin_bottom = 163.0
+custom_fonts/font = SubResource( 3 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="add_file" type="Button" parent="."]
+margin_left = 544.0
+margin_top = 190.0
+margin_right = 599.0
+margin_bottom = 217.0
+custom_fonts/font = SubResource( 3 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="add_all" type="Button" parent="."]
+margin_left = 552.0
+margin_top = 240.0
+margin_right = 607.0
+margin_bottom = 267.0
+custom_fonts/font = SubResource( 3 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="commit" type="Button" parent="."]
+margin_left = 614.0
+margin_top = 296.0
+margin_right = 669.0
+margin_bottom = 323.0
+custom_fonts/font = SubResource( 3 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="push" type="Button" parent="."]
+margin_left = 696.0
+margin_top = 350.0
+margin_right = 751.0
+margin_bottom = 377.0
+custom_fonts/font = SubResource( 3 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ui" parent="." instance=ExtResource( 4 )]
+
+[connection signal="pressed" from="init" to="." method="_on_init_pressed"]
+[connection signal="pressed" from="remote_add" to="." method="_on_remote_add_pressed"]
+[connection signal="pressed" from="status" to="." method="_on_status_pressed"]
+[connection signal="pressed" from="add_file" to="." method="_on_add_file_pressed"]
+[connection signal="pressed" from="add_all" to="." method="_on_add_all_pressed"]
+[connection signal="pressed" from="commit" to="." method="_on_commit_pressed"]
+[connection signal="pressed" from="push" to="." method="_on_push_pressed"]

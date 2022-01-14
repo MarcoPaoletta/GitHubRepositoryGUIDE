@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/update/Update.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Jomhuria-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/ui/Ui.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/Montserrat-BoldItalic.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
+
+[node name="Update" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -328.599, -131.371 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.211765, 0.0588235, 0.0588235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -373.0
+margin_top = 16.0
+margin_right = 358.0
+margin_bottom = 229.0
+custom_fonts/font = SubResource( 1 )
+text = "1) git add * = add ALL the files to the repo
+2) git commit -m <\"commit\"> = commit name
+3) git branch -M main = set the main branch to the main
+4) git push -u origin main = push local content to the main"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="add_all" type="Button" parent="."]
+margin_left = 549.5
+margin_top = 26.25
+margin_right = 604.5
+margin_bottom = 53.25
+custom_fonts/font = SubResource( 2 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="commit" type="Button" parent="."]
+margin_left = 613.5
+margin_top = 82.25
+margin_right = 668.5
+margin_bottom = 109.25
+custom_fonts/font = SubResource( 2 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="branch_m" type="Button" parent="."]
+margin_left = 731.5
+margin_top = 130.25
+margin_right = 786.5
+margin_bottom = 157.25
+custom_fonts/font = SubResource( 2 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="push_u" type="Button" parent="."]
+margin_left = 731.5
+margin_top = 218.25
+margin_right = 786.5
+margin_bottom = 245.25
+custom_fonts/font = SubResource( 2 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ui" parent="." instance=ExtResource( 3 )]
+
+[connection signal="pressed" from="add_all" to="." method="_on_add_all_pressed"]
+[connection signal="pressed" from="commit" to="." method="_on_commit_pressed"]
+[connection signal="pressed" from="branch_m" to="." method="_on_branch_m_pressed"]
+[connection signal="pressed" from="push_u" to="." method="_on_push_u_pressed"]
