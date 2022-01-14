@@ -14,7 +14,7 @@
 ---
 
 ### Sistema para copiar lineas de comandos al portapapeles
-* Script [global.gd](https://github.com/MarcoPaoletta/GitHubRepositoryGUIDE/blob/master/rsc/global/gloabal.gd)
+* Script [global.gd](https://github.com/MarcoPaoletta/GitHubRepositoryGUIDE/blob/main/src/global/global.gd)
 ```gdscript
 func set_clipboard(clipboard):
 	OS.set_clipboard(clipboard)
